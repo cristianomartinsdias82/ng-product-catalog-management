@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-title>
+        <h1>{{this.formTitle}}</h1>
+    </mat-card-title>
+    <mat-card-content>
+        <form>
+            <mat-form-field>
+                <input [(ngModel)]="product.title" name="title" matInput placeholder="Product name" />
+            </mat-form-field>
+            <mat-form-field>
+                <input [(ngModel)]="product.description" name="description" matInput placeholder="Description" />
+            </mat-form-field>
+            <mat-form-field>
+                <input [(ngModel)]="product.price" name="price" matInput placeholder="Price (BRL)" />
+            </mat-form-field>
+            <mat-form-field>
+                <input [(ngModel)]="product.category" name="category" matInput placeholder="Category" />
+            </mat-form-field>
+            <mat-form-field>
+                <input [(ngModel)]="product.image" name="image" matInput placeholder="Image" />
+            </mat-form-field>
+        </form>
+        <button (click)="onSaveClick($event)" mat-raised-button color="accent">Save</button>
+        <button (click)="onCancelClick($event)" mat-raised-button color="primary">Cancel</button>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,15 @@
+<mat-card class="home mat-elevation-z3">
+    <mat-card-title class="title">
+        <h1>Product catalog management</h1>
+    </mat-card-title>
+    <mat-card-content>
+        <button mat-raised-button (click)="onNewClick($event)">
+            New
+        </button>
+        <c3r-list-products></c3r-list-products>
+        <!-- Uncomment this markup to see the Tabel schematic boilerplate
+        <hr/>
+        <c3r-table-creation-schematic></c3r-table-creation-schematic>
+        -->
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+}
+
+.edit > i, i.delete {
+    color: #fff;
+    cursor: pointer;
+}
+
+.product-image {
+    max-width: 100px;
+    height: auto;
+}
