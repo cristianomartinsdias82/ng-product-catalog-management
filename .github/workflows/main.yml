@@ -1,4 +1,4 @@
-name: Angular GitHub Actions CI
+name: Product Catalog Management project CI
 on:
   push:
     branches:
@@ -39,10 +39,16 @@ jobs:
           npm ci
       - name: Build
         run: |
-          npm run build -- --prod
+          npm run build:ci
       - name: Lint
         run: |
           npm run lint
 #      - name: Test
 #        run: |
 #          npm run test -- --prod
+      - name: Archive build
+        if: success()
+        uses: actions/upload-artifact@v1
+        with:
+        name: deploy_dist
+        path: dist
