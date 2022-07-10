@@ -6,6 +6,7 @@
     "start": "ng serve",
     "start-open": "ng serve -o",
     "build": "ng build",
+    "build:ci": "ng build --prod",
     "watch": "ng build --watch --configuration development"
   },
   "private": true,
