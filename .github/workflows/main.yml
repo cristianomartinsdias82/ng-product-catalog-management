@@ -10,10 +10,11 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [10.x, 12.x, 14.x, 16.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Source-code checkout
+        uses: actions/checkout@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -26,7 +27,6 @@ jobs:
         env:
           cache-name: cache-node-modules
         with:
-          # caching node_modules
           path: node_modules
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
@@ -48,7 +48,7 @@ jobs:
 #          npm run test -- --prod
       - name: Archive build
         if: success()
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: deploy_dist
           path: dist
